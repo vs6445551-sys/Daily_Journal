@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Daily Journal — Home</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="page-bg">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand small">Daily Journal</div>
+      <div class="controls">
+        <span id="greeting" class="muted">Hello</span>
+        <button id="logoutBtn" class="btn ghost">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="homeApp">
+    <section class="hero">
+      <h2>Your Journal</h2>
+      <p class="muted">Write, edit and reflect. Entries are private to you.</p>
+    </section>
+
+    <div class="actions">
+      <button id="newEntryBtn" class="btn primary large">+ New Entry</button>
+    </div>
+
+    <section id="entriesList" class="entries-grid">
+      <!-- entries inserted here -->
+    </section>
+  </main>
+
+  <!-- Modal for add/edit -->
+  <div id="entryModal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <header class="modal-header">
+        <h3 id="modalTitle">New Entry</h3>
+        <button id="closeModal" class="btn icon">✕</button>
+      </header>
+      <form id="entryForm" class="modal-form">
+        <input id="entryId" type="hidden">
+        <label class="field"><input id="entryTitle" placeholder="Title"></label>
+        <label class="field"><textarea id="entryContent" rows="8" placeholder="Write something..." required></textarea></label>
+        <div class="modal-actions">
+          <button type="button" id="cancelBtn" class="btn ghost">Cancel</button>
+          <button type="submit" class="btn primary">Save</button>
+        </div>
+      </form>
+      <button onclick="window.location.href='/view'" class="btn">
+    📖 View Journals
+</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" aria-hidden="true"></div>
+
+  <script src="/static/js/app.js" defer></script>
+</body>
+</html>
